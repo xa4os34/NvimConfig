@@ -34,7 +34,9 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>ep", "<cmd>e ~/.config/nvim/lua/xa4/packer.lua<CR>");
 vim.keymap.set("n", "<leader>ek", "<cmd>e ~/.config/nvim/lua/xa4/keybindings.lua<CR>");
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
+vim.keymap.set("n", "<leader>el", "<cmd>e ~/.config/nvim/after/plugin/lsp.lua<CR>");
+vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
+vim.keymap.set("n", "<leader>gl", "<cmd>CellularAutomaton game_of_life<CR>")
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")

@@ -30,6 +30,8 @@ return require('packer').startup(function(use)
 
   use({ 'tpope/vim-fugitive' })
 
+  use({ 'eandrju/cellular-automaton.nvim' })
+
   use({
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x',

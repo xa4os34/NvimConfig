@@ -9,7 +9,7 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         'rust_analyzer',
         'tsserver',
-        'csharp_ls',
+        'omnisharp',
         'lua_ls',
         'grammarly',
         'clangd'
