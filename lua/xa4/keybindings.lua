@@ -30,7 +30,9 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>rs", [[:%s/<C-r>"/<C-r>"/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>ex", "<cmd>!exec +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>ep", "<cmd>e ~/.config/nvim/lua/xa4/packer.lua<CR>");
 vim.keymap.set("n", "<leader>ek", "<cmd>e ~/.config/nvim/lua/xa4/keybindings.lua<CR>");

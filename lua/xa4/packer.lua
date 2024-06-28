@@ -32,6 +32,10 @@ return require('packer').startup(function(use)
 
   use({ 'eandrju/cellular-automaton.nvim' })
 
+  use({ 'tpope/vim-markdown' })
+
+  use({ 'joukevandermaas/vim-ember-hbs' })
+
   use({
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v3.x',

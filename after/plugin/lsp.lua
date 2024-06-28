@@ -7,11 +7,10 @@ lsp_zero.preset("recommended")
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
+        'csharp_ls',
         'rust_analyzer',
-        'tsserver',
-        'omnisharp',
         'lua_ls',
-        'grammarly',
+        'marksman',
         'clangd'
     },
     handlers = {
@@ -20,6 +19,13 @@ require('mason-lspconfig').setup({
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
         end,
+        omnisharp = function()
+            require('lspconfig').csharp_ls.setup({
+                handlers = {
+                    ["textDocument/definition"] = require('omnisharp_extended').handler,
+                }
+            })
+        end,
     }
 })
 
@@ -27,7 +33,6 @@ vim.filetype.add({ extension = { axaml = 'axaml' } })
 
 local lsp_configurations = require('lspconfig.configs')
 
-if not lsp_configurations.axaml_ls then
   lsp_configurations.axaml_ls = {
     default_config = {
       name = 'axaml-ls',
@@ -37,9 +42,9 @@ if not lsp_configurations.axaml_ls then
       single_file_support = false
     }
   }
-end
 
 require('lspconfig').axaml_ls.setup({})
+require('lspconfig').marksman.setup({})
 
 lsp_zero.set_preferences({
     suggest_lsp_servers = false,
