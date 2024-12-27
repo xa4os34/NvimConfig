@@ -16,7 +16,13 @@ return require('packer').startup(function(use)
 	  end
   })
 
+  use({ 'lukas-reineke/indent-blankline.nvim' })
+
   use({ 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} })
+
+  use({ 'sheerun/vim-polyglot' })
+
+  use({ 'jmederosalvarado/roslyn.nvim' })
 
   use({ 'nvim-treesitter/playground' })
 
