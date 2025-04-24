@@ -62,17 +62,28 @@ vim.filetype.add({ filename = { ["CMakeLists.txt"] = 'cmake' } })
 vim.filetype.add({ extension = { axaml = 'axaml' } })
 vim.filetype.add({ extension = { cshtml = 'cshtml' } })
 
--- require("lspconfig.configs").axaml_ls = {
---     default_config = {
---         name = 'axaml-ls',
---         cmd = { 'axaml-ls' },
---         filetypes = { 'axaml' },
---         root_dir = require('lspconfig.util').root_pattern('*.csproj'),
---         single_file_support = false
---     }
--- }
+require("lspconfig.configs").axaml_ls = {
+    default_config = {
+        name = 'axaml-ls',
+        cmd = { 'axaml-ls' },
+        filetypes = { 'axaml' },
+        root_dir = require('lspconfig.util').root_pattern('*.csproj'),
+        single_file_support = false
+    }
+}
+
+require("lspconfig.configs").scilab_lsp = {
+    default_config = {
+        name = 'scilab_lsp',
+        cmd = { '/opt/scilab-lsp/start.sh' },
+        filetypes = { 'scilab' },
+        root_dir = require('lspconfig.util').root_pattern('*.sci'),
+        single_file_support = true
+    }
+}
 
 require('lspconfig').marksman.setup({})
+require('lspconfig').scilab_lsp.setup({})
 require('lspconfig').clangd.setup({
     cmd = {
         'clangd', '--query-driver=/usr/bin/arm-none-eabi-g*',

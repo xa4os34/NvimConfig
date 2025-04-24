@@ -1,3 +1,4 @@
+vim.cmd('set splitright')
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>;v", vim.cmd.Ex)
 
@@ -33,6 +34,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>rs", [[:%s/<C-r>"/<C-r>"/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>ex", "<cmd>!exec +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>rs", "<cmd>vertical term scilab -nw -e \"$(cat %)\"<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>ep", "<cmd>e ~/.config/nvim/lua/xa4/packer.lua<CR>");
 vim.keymap.set("n", "<leader>ek", "<cmd>e ~/.config/nvim/lua/xa4/keybindings.lua<CR>");
@@ -43,3 +45,4 @@ vim.keymap.set("n", "<leader>gl", "<cmd>CellularAutomaton game_of_life<CR>")
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
